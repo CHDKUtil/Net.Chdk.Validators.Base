@@ -19,6 +19,15 @@ namespace Net.Chdk.Validators
 
         protected abstract void DoValidate(T value, string basePath);
 
+        protected static void Validate(Version version)
+        {
+            if (version == null)
+                throw new ValidationException("Null version");
+
+            if (version.Major < 1 || version.Minor < 0)
+                throw new ValidationException("Invalid version");
+        }
+
         protected static void ValidateCreated(DateTime? created, Func<string> formatter)
         {
             if (created == null)

@@ -6,7 +6,7 @@ namespace Net.Chdk.Validators
 {
     public abstract class Validator<T> : IValidator<T>
     {
-        public void Validate(T value, string basePath)
+        public void Validate(T value, string basePath, IProgress<double> progress)
         {
             if (value == null)
                 throw new ArgumentNullException(nameof(value));
@@ -14,10 +14,10 @@ namespace Net.Chdk.Validators
             if (string.IsNullOrEmpty(basePath))
                 throw new ArgumentException("Missing base path", nameof(basePath));
 
-            DoValidate(value, basePath);
+            DoValidate(value, basePath, progress);
         }
 
-        protected abstract void DoValidate(T value, string basePath);
+        protected abstract void DoValidate(T value, string basePath, IProgress<double> progress);
 
         protected static void Validate(Version version)
         {

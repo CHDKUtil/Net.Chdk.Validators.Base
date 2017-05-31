@@ -1,12 +1,13 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Threading;
 
 namespace Net.Chdk.Validators
 {
     public abstract class Validator<T> : IValidator<T>
     {
-        public void Validate(T value, string basePath, IProgress<double> progress)
+        public void Validate(T value, string basePath, IProgress<double> progress, CancellationToken token)
         {
             if (value == null)
                 throw new ArgumentNullException(nameof(value));
@@ -14,10 +15,10 @@ namespace Net.Chdk.Validators
             if (string.IsNullOrEmpty(basePath))
                 throw new ArgumentException("Missing base path", nameof(basePath));
 
-            DoValidate(value, basePath, progress);
+            DoValidate(value, basePath, progress, token);
         }
 
-        protected abstract void DoValidate(T value, string basePath, IProgress<double> progress);
+        protected abstract void DoValidate(T value, string basePath, IProgress<double> progress, CancellationToken token);
 
         protected static void Validate(Version version)
         {

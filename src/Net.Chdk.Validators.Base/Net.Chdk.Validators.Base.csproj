@@ -3,13 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
     <Description>CHIMP base validators</Description>
-    <AssemblyName>Net.Chdk.Validators.Base</AssemblyName>
     <RootNamespace>Net.Chdk.Validators</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup>
     <Version>0.1.0</Version>
     <Product>CHIMP</Product>
+    <Authors>Dmitry Shechtman</Authors>
     <Copyright>Copyright © 2017 Dmitry Shechtman</Copyright>
   </PropertyGroup>
 
@@ -17,7 +17,6 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Net.Chdk.Validators.Base</Title>
     <PackageVersion>$(Version)-alpha</PackageVersion>
-    <Authors>Dmitry Shechtman</Authors>
     <PackageIconUrl>https://raw.githubusercontent.com/CHDKUtil/CHIMP/master/tiny.png</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/CHDKUtil/Net.Chdk.Validators.Base/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/CHDKUtil/Net.Chdk.Validators.Base</PackageProjectUrl>
